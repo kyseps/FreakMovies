@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  /* height: 2000px; */
+}
+
+.freakFont {
+  font-family: "Rock Salt", cursive;
+}
+
+.handle-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+a:hover {
+  color: white;
+}
+
+i {
+  cursor: pointer;
+}
