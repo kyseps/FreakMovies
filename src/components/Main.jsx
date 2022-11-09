@@ -3,6 +3,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import SliderMain from "./SliderMain";
 import SlideShow from "./SlideShow";
+import TopRated from "./TopRated";
 import TVPopular from "./TVPopular";
 
 export default function Main() {
@@ -12,6 +13,7 @@ export default function Main() {
       <SlideShow />
       <SliderMain />
       <TVPopular />
+      <TopRated />
     </>
   );
 }
