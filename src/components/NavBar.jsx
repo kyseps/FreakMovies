@@ -2,8 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
-
-  
   return (
     <nav className="grid grid-cols-12 mt-10 bg-gray-800 py-4 border-b border-b-2 border-rose-900">
       <ul className="col-span-9 flex gap-8 col-start-2">
@@ -40,12 +38,12 @@ export default function NavBar() {
           </NavLink>
         </li>
       </ul>
-      {/* <div className="col-span-1 flex gap-4">
+      <div className="col-span-1 flex gap-4">
         <i className="fa-brands fa-twitter text-slate-50 text-xl"></i>
         <i className="fa-brands fa-instagram text-slate-50 text-xl"></i>
         <i className="fa-brands fa-square-facebook text-slate-50 text-xl"></i>
         <i className="fa-solid fa-envelope text-slate-50 text-xl"></i>
-      </div> */}
+      </div>
     </nav>
   );
 }
