@@ -7,6 +7,7 @@ import PeopleSearch from "./Search/PeopleSearch";
 import TvSearch from "./Search/TvSearch";
 
 export default function SearchBar() {
+  
   const [query, setQuery] = useState("");
   const [searchResult, setSearchResult] = useState([]);
 
