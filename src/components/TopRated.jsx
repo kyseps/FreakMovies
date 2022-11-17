@@ -27,6 +27,7 @@ export default function TopRated() {
         TopRated Movies Movies
       </h2>
       <Swiper
+        className="overflow-visible"
         breakpoints={{
           640: {
             slidesPerView: 1,
