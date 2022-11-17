@@ -28,8 +28,6 @@ export default function TVPopular() {
     }
   }
 
-  console.log(tvMovies);
-
   useEffect(() => {
     handleTvPopular();
   }, []);

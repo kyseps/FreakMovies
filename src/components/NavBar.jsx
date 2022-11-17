@@ -18,7 +18,7 @@ export default function NavBar() {
             to="/tvShow"
             className="text-slate-50 text-lg hover:bg-rose-900 py-5 px-3 rounded"
           >
-            TVshow
+            TVshows
           </NavLink>
         </li>
         <li>

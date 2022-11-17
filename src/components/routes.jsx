@@ -4,6 +4,7 @@ import Contact from "./Contact";
 import Main from "./Main";
 import Movie from "./Movie";
 import People from "./People";
+import PeopleID from "./PeopleID";
 import TvShow from "./TvShow";
 
 export const router = createBrowserRouter([
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
   {
     path: "/people",
     element: <People />,
+  },
+  {
+    path: "/people/:id",
+    element: <PeopleID />,
   },
   {
     path: "/contact",

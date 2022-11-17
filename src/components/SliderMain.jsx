@@ -3,7 +3,7 @@ import "swiper/css";
 import "../styleswiper.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
-import { apiKey, baseImgURL, baseURL, putImage } from "./config";
+import { apiKey, baseURL, putImage } from "./config";
 import { Autoplay, Navigation } from "swiper";
 import { NavLink } from "react-router-dom";
 
