@@ -17,8 +17,8 @@ body {
 }
 
 .swiper {
-  width: 100%;
-  height: 95vh;
+  height: fit-content;
+  height: fit-content;
 }
 
 .swiper-slide {
@@ -39,19 +39,4 @@ body {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
-
-.swiper1 {
-  height: 400px;
-}
-
-.swiper2 {
-  height: 300px;
 }

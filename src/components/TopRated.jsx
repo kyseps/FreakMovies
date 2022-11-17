@@ -6,6 +6,8 @@ import axios from "axios";
 import { apiKey, baseImgURL, baseURL, putImage } from "./config";
 import { Autoplay, Navigation } from "swiper";
 import { NavLink } from "react-router-dom";
+import MovieCard from "./MovieCard/MovieCard";
+
 export default function TopRated() {
   const [movies, setMovies] = useState([]);
 
@@ -20,9 +22,34 @@ export default function TopRated() {
     getLatestMovies();
   }, []);
   return (
-    <>
-      <h2 className="text-2xl text-rose-700 py-10">TopRated Movies Movies</h2>
+    <div className="my-8">
+      <h2 className="text-2xl text-rose-700 ml-5 py-10">
+        TopRated Movies Movies
+      </h2>
       <Swiper
+        className="overflow-visible"
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1280: {
+            slidesPerView: 5,
+            spaceBetween: 35,
+          },
+          1536: {
+            slidesPerView: 6,
+            spaceBetween: 40,
+          },
+        }}
         navigation={false}
         slidesPerView={7}
         spaceBetween={30}
@@ -31,24 +58,21 @@ export default function TopRated() {
           clickable: true,
         }}
         autoplay
-        className="swiper1 my-10"
       >
-        {movies.map((item) => {
+        {movies.map((movie) => {
           return (
-            <SwiperSlide
-              key={item.id}
-              className="bg-rose-900 rounded-xl flex flex-col justify-start"
-            >
-              <NavLink to={`/movie/${item.id}`}>
-                <div>
-                  <img className="max-h-80" src={putImage(item.poster_path)} />
-                  <p className="text-rose-50">{item.original_title}</p>
-                </div>
+            <SwiperSlide className="overflow-visible" key={movie.id}>
+              <NavLink to={`/movie/${movie.id}`}>
+                <MovieCard
+                  img={putImage(movie.poster_path)}
+                  title={movie.title}
+                  rate={movie.vote_average}
+                />
               </NavLink>
             </SwiperSlide>
           );
         })}
       </Swiper>
-    </>
+    </div>
   );
 }

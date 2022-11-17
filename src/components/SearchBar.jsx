@@ -40,11 +40,14 @@ export default function SearchBar() {
   }
 
   return (
-    <section className="grid grid-cols-12 mt-8 gap-8">
-      <section className="col-span-2 col-start-2">
-        <span className=" p-2 text-rose-500 freakFont text-2xl">
+    <section className=" grid grid-cols-12 mt-8 gap-8">
+      <section className="col-span-3 col-start-1 ml-7">
+        <a
+          href="http://127.0.0.1:5173/"
+          className=" p-2 text-rose-600 freakFont text-2xl"
+        >
           FreakMovies
-        </span>
+        </a>
       </section>
       <div className="relative flex flex-col col-span-6 rounded-xl text-lg p-2">
         <input
@@ -70,15 +73,15 @@ export default function SearchBar() {
       </div>
       <button
         type="submit"
-        className="col-span-1 bg-green-600 rounded text-lg text-slate-50"
+        className="col-span-1 bg-green-600 hover:bg-green-500 rounded text-slate-50 sm:text-sm lg:text-lg"
       >
         Login
       </button>
       <button
         type="submit"
-        className="col-span-1 rounded bg-rose-900 text-lg text-slate-50 "
+        className="col-span-1 rounded bg-rose-800 hover:bg-rose-600 text-lg text-slate-50 sm:text-sm lg:text-lg"
       >
-        Register
+        signup
       </button>
     </section>
   );
