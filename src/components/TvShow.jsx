@@ -1,11 +1,13 @@
 import React from "react";
 
 import NavBar from "./NavBar";
+import TVPopular from "./TVPopular";
 
 export default function TvShow() {
-  
-  return (<>
-    <NavBar />
-    <h1>TvShow</h1>
-  </>);
+  return (
+    <>
+      <NavBar />
+      <TVPopular />
+    </>
+  );
 }

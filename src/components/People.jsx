@@ -27,16 +27,16 @@ export default function People() {
   return (
     <>
       <NavBar />
-      <h1>People</h1>
-
-      {people.map((person) => {
-        return (
-          <div className="">
-            <img src={`${baseImgURL}/w780/${person.profile_path}`} />
-            <p>{person.name}</p>
-          </div>
-        );
-      })}
+      <div className="grid gap-x-8 gap-y-4 grid-cols-4 w-11/12 mx-auto p-4">
+        {people.map((person) => {
+          return (
+            <div className="flex h-44 gap-4 bg-gray-800 rounded-lg">
+              <img className="rounded-lg" src={`${baseImgURL}/w780/${person.profile_path}`} />
+              <p className="text-rose-600 text-base">{person.name}</p>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
