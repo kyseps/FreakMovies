@@ -17,7 +17,6 @@ export default function TopRated() {
     );
     setMovies(data.results);
   }
-  console.log(movies);
 
   useEffect(() => {
     getLatestMovies();

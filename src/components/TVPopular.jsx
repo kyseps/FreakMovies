@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
+import { NavLink } from "react-router-dom";
 
 export default function TVPopular() {
   const [tvMovies, setTvMovies] = useState([]);
@@ -26,8 +27,6 @@ export default function TVPopular() {
       console.log("Vay Bad Shod");
     }
   }
-
-  console.log(tvMovies);
 
   useEffect(() => {
     handleTvPopular();
@@ -56,10 +55,12 @@ export default function TVPopular() {
         {tvMovies.map((movie) => {
           return (
             <SwiperSlide key={movie.id}>
-              <div>
-                <img className="max-h-80" src={putImage(movie.poster_path)} />
-                <p className="text-rose-700">{movie.name}</p>
-              </div>
+              <NavLink to={`/movie/${movie.id}`}>
+                <div>
+                  <img className="max-h-80" src={putImage(movie.poster_path)} />
+                  <p className="text-rose-700">{movie.name}</p>
+                </div>
+              </NavLink>
             </SwiperSlide>
           );
         })}

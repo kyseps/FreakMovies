@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
-import { apiKey, baseImgURL, baseURL, putImage } from "./config";
+import { apiKey, baseURL, putImage } from "./config";
 import { Autoplay, Navigation } from "swiper";
 import { NavLink } from "react-router-dom";
 import MovieCard from "./MovieCard/MovieCard";

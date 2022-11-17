@@ -10,6 +10,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { baseImgURL } from "./config";
+import { NavLink } from "react-router-dom";
 
 export default function SlideShow() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -34,16 +35,16 @@ export default function SlideShow() {
       >
         {trendingMovies.map((item) => {
           return (
-            <div className="from-slate-800 absolute">
-              <p>{item.title}</p>
-
-              <SwiperSlide>
-                <img
-                  src={`${baseImgURL}/original/${item.backdrop_path}`}
-                  alt=""
-                />
-              </SwiperSlide>
-            </div>
+            <SwiperSlide key={item.id}>
+              <NavLink to={`/movie/${item.id}`}>
+                <div className="from-slate-800">
+                  <img
+                    src={`${baseImgURL}/original/${item.backdrop_path}`}
+                    alt={item.title}
+                  />
+                </div>
+              </NavLink>
+            </SwiperSlide>
           );
         })}
       </Swiper>
