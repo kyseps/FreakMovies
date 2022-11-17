@@ -1,16 +1,17 @@
 import "antd/dist/antd.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./components/routes";
+import { Outlet} from "react-router-dom";
 import MovieCard from "./components/MovieCard/MovieCard";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
       <Header />
-      <RouterProvider router={router} />
+      <Outlet/>
       <Footer />
+      <Toaster/>
     </>
   );
 }

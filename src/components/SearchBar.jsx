@@ -1,13 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import { apiKey, baseURL } from "./config";
+import { UserContext } from "../context/UserContext";
+import { apiKey, baseImgURL, baseURL } from "./config";
 import MovieSearch from "./Search/MovieSearch";
 import PeopleSearch from "./Search/PeopleSearch";
 import TvSearch from "./Search/TvSearch";
 
 export default function SearchBar() {
-  
+  const { user, logout } = useContext(UserContext);
   const [query, setQuery] = useState("");
   const [searchResult, setSearchResult] = useState([]);
 
@@ -71,18 +74,27 @@ export default function SearchBar() {
           </div>
         </div>
       </div>
-      <button
-        type="submit"
-        className="col-span-1 bg-green-600 hover:bg-green-500 rounded text-slate-50 sm:text-sm lg:text-lg"
-      >
-        Login
-      </button>
-      <button
-        type="submit"
-        className="col-span-1 rounded bg-rose-800 hover:bg-rose-600 text-lg text-slate-50 sm:text-sm lg:text-lg"
-      >
-        signup
-      </button>
+      {Object.keys(user).length ? (
+        <div  className="flex justify-center items-center ml-20 gap-8 ">
+          <div className="text-lg text-slate-50">{user.name}</div>
+          <button onClick={logout} className=" text-slate-50 text-lg bg-rose-900 py-2 px-5 rounded" >LogOut</button>
+        </div>
+      ) : (
+        <>
+          <button
+            type="submit"
+            className="col-span-1 bg-green-600 hover:bg-green-500 rounded text-slate-50 sm:text-sm lg:text-lg"
+          >
+            <NavLink to="/login">Login</NavLink>
+          </button>
+          <button
+            type="submit"
+            className="col-span-1 rounded bg-rose-800 hover:bg-rose-600 text-lg text-slate-50 sm:text-sm lg:text-lg "
+          >
+          Signup
+          </button>
+        </>
+      )}
     </section>
   );
 }
