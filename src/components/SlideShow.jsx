@@ -34,7 +34,9 @@ export default function SlideShow() {
       >
         {trendingMovies.map((item) => {
           return (
-            <div className="from-slate-800">
+            <div className="from-slate-800 absolute">
+              <p>{item.title}</p>
+
               <SwiperSlide>
                 <img
                   src={`${baseImgURL}/original/${item.backdrop_path}`}

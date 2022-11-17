@@ -34,8 +34,8 @@ export default function TVPopular() {
   }, []);
 
   return (
-    <section className="mx-auto px-5 w-5/5 border-b-2">
-      <h2 className="text-2xl text-rose-700 py-10">Popular TV Movies</h2>
+    <section>
+      <h2 className="text-2xl text-rose-700 ml-5 py-10">Popular TV Series</h2>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
