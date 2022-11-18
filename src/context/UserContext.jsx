@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { apiKey, baseURL } from "../components/config";
 
 export const UserContext = createContext({ user: {}, session: "" });
@@ -12,6 +12,7 @@ export default function UserProvider({ children }) {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const [session, setSession] = useState(() => localStorage.getItem("session"));
   const navigate = useNavigate();
+  const location = useLocation()
   async function getUserData() {
     const { data } = await axios.get(
       `${baseURL}/account?api_key=${apiKey}&session_id=${session}`
@@ -30,7 +31,13 @@ export default function UserProvider({ children }) {
 
   useEffect(() => {
     if (session) {
+      localStorage.setItem("session", session);
       getUserData();
+    }
+    if(location.pathname==="/login"){
+      navigate("/profile", {
+        replace: true,
+      });
     }
   }, [session]);
 
@@ -60,10 +67,6 @@ export default function UserProvider({ children }) {
         }
       );
       setSession(session.data.session_id);
-      localStorage.setItem("session", session.data.session_id);
-      navigate("/", {
-        replace: true,
-      });
     } catch {
       toast.error("Invalid username and password!");
     }
