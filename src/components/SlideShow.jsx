@@ -11,6 +11,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { baseImgURL } from "./config";
 import { NavLink } from "react-router-dom";
+import SlideshowCard from "./slideshowCard/SlideshowCard";
 
 export default function SlideShow() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -37,12 +38,7 @@ export default function SlideShow() {
           return (
             <SwiperSlide key={item.id}>
               <NavLink to={`/movie/${item.id}`}>
-                <div className="from-slate-800">
-                  <img
-                    src={`${baseImgURL}/original/${item.backdrop_path}`}
-                    alt={item.title}
-                  />
-                </div>
+                <SlideshowCard item={item} />
               </NavLink>
             </SwiperSlide>
           );
