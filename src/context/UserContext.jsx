@@ -56,7 +56,7 @@ export default function UserProvider({ children }) {
       const session = await axios.post(
         `${baseURL}/authentication/session/new?api_key=${apiKey}`,
         {
-          request_token: tokenResult.data.requesgit t_token,
+          request_token: tokenResult.data.request_token,
         }
       );
       setSession(session.data.session_id);
