@@ -76,7 +76,12 @@ export default function SearchBar() {
       </div>
       {Object.keys(user).length ? (
         <div className="flex justify-center items-center ml-20 gap-8 ">
-          <div className="text-lg text-slate-50">{user.name}</div>
+          <div>
+            <img
+              src={`${baseImgURL}/w185/${user?.avatar?.tmdb?.avatar_path}`}
+            />
+          </div>
+          <div className="text-lg   text-slate-50">{user.name}</div>
           <button
             onClick={logout}
             className=" text-slate-50 text-lg bg-rose-900 py-2 px-5 rounded"
@@ -96,7 +101,7 @@ export default function SearchBar() {
             type="submit"
             className="rounded bg-rose-800 hover:bg-rose-600 text-lg text-slate-50 sm:text-sm lg:text-lg px-6 py-2"
           >
-            Signup
+            Register
           </button>
         </div>
       )}
