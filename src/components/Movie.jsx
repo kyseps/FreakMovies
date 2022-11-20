@@ -68,11 +68,12 @@ export default function Movie() {
             className={`bg-cover h-[400px]`}
             style={{
               backgroundImage: `url(${baseImgURL}/original/${movie.backdrop_path})`,
+              backgroundSize: "cover",
             }}
           >
             <div className="flex items-center w-full h-full bg-gradient-to-b from-[#000000c7] to-[#000000c7]">
               <div className=" ml-10 flex">
-                <img src={putImage(movie.poster_path, "w300")} />
+                <img src={putImage(movie.poster_path, "w500")} />
               </div>
               <div className="flex flex-col gap-5 ml-3 p-2">
                 <h2 className="text-slate-400 text-3xl">{movie.title}</h2>

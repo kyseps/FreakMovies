@@ -30,7 +30,7 @@ export default function SlideShow() {
     <div>
       <Swiper
         navigation={true}
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation]}
         className="mySwiper bg-rose-700"
         autoplay
       >
