@@ -8,7 +8,11 @@ export default function NavBar() {
         <li>
           <NavLink
             to="/"
-            className="text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            }
           >
             Movies
           </NavLink>
@@ -16,7 +20,11 @@ export default function NavBar() {
         <li>
           <NavLink
             to="/tvShow"
-            className="text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            }
           >
             TVshows
           </NavLink>
@@ -24,7 +32,11 @@ export default function NavBar() {
         <li>
           <NavLink
             to="/people"
-            className="text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            }
           >
             People
           </NavLink>
@@ -32,7 +44,11 @@ export default function NavBar() {
         <li>
           <NavLink
             to="/contact"
-            className="text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+            }
           >
             Contact
           </NavLink>

@@ -9,6 +9,7 @@ import PeopleID from "./components/PeopleID";
 import TvShow from "./components/TvShow";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+import TvShowId from "./components/TvShowId";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
         <App />
       </UserProvider>
     ),
-    children:[
+    children: [
       {
         path: "/",
         element: <Main />,
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "/tvShow",
         element: <TvShow />,
+      },
+      {
+        path: "/tvShow/:id",
+        element: <TvShowId />,
       },
       {
         path: "/people",
@@ -43,14 +48,13 @@ export const router = createBrowserRouter([
         element: <Movie />,
       },
       {
-        path:"/login",
-        element:<Login/>
+        path: "/login",
+        element: <Login />,
       },
       {
-        path:"/profile",
-        element:<Profile/>
-      }
-    ]
-  }
-  
+        path: "/profile",
+        element: <Profile />,
+      },
+    ],
+  },
 ]);
