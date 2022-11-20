@@ -75,15 +75,6 @@ export default function SearchBar() {
         </div>
       </div>
       {Object.keys(user).length ? (
-<<<<<<< HEAD
-        <div className="flex justify-center items-center ml-20 gap-8 ">
-          <div>
-            <img
-              src={`${baseImgURL}/w185/${user?.avatar?.tmdb?.avatar_path}`}
-            />
-          </div>
-          <div className="text-lg   text-slate-50">{user.name}</div>
-=======
         <div className="flex justify-center items-center gap-8 -mr-36 ">
           <img
             src={`${baseImgURL}/w185/${user?.avatar?.tmdb?.avatar_path}`}
@@ -93,7 +84,6 @@ export default function SearchBar() {
             className=" w-9 h-9 rounded-full"
           />
           <div className="text-lg text-slate-50">{user.name || user.username}</div>
->>>>>>> Login
           <button
             onClick={logout}
             className=" text-slate-50 text-lg bg-rose-900 py-2 px-5 rounded"
