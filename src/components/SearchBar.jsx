@@ -75,9 +75,21 @@ export default function SearchBar() {
         </div>
       </div>
       {Object.keys(user).length ? (
-        <div  className="flex justify-center items-center ml-20 gap-8 ">
-          <div className="text-lg text-slate-50">{user.name}</div>
-          <button onClick={logout} className=" text-slate-50 text-lg bg-rose-900 py-2 px-5 rounded" >LogOut</button>
+        <div className="flex justify-center items-center gap-8 -mr-36 ">
+          <img
+            src={`${baseImgURL}/w185/${user?.avatar?.tmdb?.avatar_path}`}
+            onError={(e) => {
+              (e.target.src = "profile-picture.webp"), (e.onError = null);
+            }}
+            className=" w-9 h-9 rounded-full"
+          />
+          <div className="text-lg text-slate-50">{user.name || user.username}</div>
+          <button
+            onClick={logout}
+            className=" text-slate-50 text-lg bg-rose-900 py-2 px-5 rounded"
+          >
+            LogOut
+          </button>
         </div>
       ) : (
         <>
@@ -91,7 +103,7 @@ export default function SearchBar() {
             type="submit"
             className="col-span-1 rounded bg-rose-800 hover:bg-rose-600 text-lg text-slate-50 sm:text-sm lg:text-lg "
           >
-          Signup
+            Signup
           </button>
         </>
       )}
