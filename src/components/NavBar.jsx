@@ -50,7 +50,7 @@ export default function NavBar() {
                 : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
             }
           >
-            Contact
+            More
           </NavLink>
         </li>
       </ul>

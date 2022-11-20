@@ -1,10 +1,8 @@
-import { Spin } from "antd";
 import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
-// import toast from "react-hot-toast";
 import { UserContext } from "../context/UserContext";
 import { useParams } from "react-router-dom";
 import { Autoplay, Navigation } from "swiper";
@@ -12,6 +10,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { apiKey, baseImgURL, baseURL, putImage, youTubeURL } from "./config";
 import AntLoading from "./Loading/AntLoading";
 import NavBar from "./NavBar";
+
 
 export default function Movie() {
   const [movie, setMovie] = useState(null);
