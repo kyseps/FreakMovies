@@ -75,7 +75,7 @@ export default function SearchBar() {
         </div>
       </div>
       {Object.keys(user).length ? (
-        <div className="flex justify-center items-center gap-8 -mr-36 ">
+        <div className="flex justify-center items-center gap-8 -mr-16 ">
           <img
             src={`${baseImgURL}/w185/${user?.avatar?.tmdb?.avatar_path}`}
             onError={(e) => {
