@@ -28,6 +28,7 @@ export default function UserProvider({ children }) {
     );
     setFavoriteMovies(favResult.data.results);
   }
+  console.log(favoriteMovies);
 
   useEffect(() => {
     if (session) {

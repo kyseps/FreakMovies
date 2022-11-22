@@ -10,6 +10,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { apiKey, baseImgURL, baseURL, putImage, youTubeURL } from "./config";
 import AntLoading from "./Loading/AntLoading";
 import NavBar from "./NavBar";
+import toast from "react-hot-toast";
 
 
 export default function Movie() {

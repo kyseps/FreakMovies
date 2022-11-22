@@ -75,13 +75,19 @@ export default function SearchBar() {
         </div>
       </div>
       {Object.keys(user).length ? (
-        <div className="flex justify-center items-center ml-20 gap-8 ">
-          <div>
+        <div className="flex justify-center items-center gap-8 -mr-16 ">
+          <NavLink to="/Profile">
             <img
               src={`${baseImgURL}/w185/${user?.avatar?.tmdb?.avatar_path}`}
+              onError={(e) => {
+                (e.target.src = "profile-picture.webp"), (e.onError = null);
+              }}
+              className=" w-9 h-9 rounded-full"
             />
+          </NavLink>
+          <div className="text-lg text-slate-50">
+            <NavLink to="/Profile">{user.name || user.username}</NavLink>
           </div>
-          <div className="text-lg   text-slate-50">{user.name}</div>
           <button
             onClick={logout}
             className=" text-slate-50 text-lg bg-rose-900 py-2 px-5 rounded"
