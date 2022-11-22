@@ -1,5 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function NavBar() {
   return (
@@ -10,8 +13,8 @@ export default function NavBar() {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
-                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-4 px-3 rounded"
+                : "text-slate-50 text-lg hover:bg-rose-600 py-4 px-3 rounded"
             }
           >
             Movies
@@ -22,8 +25,8 @@ export default function NavBar() {
             to="/tvShow"
             className={({ isActive }) =>
               isActive
-                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
-                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-4 px-3 rounded"
+                : "text-slate-50 text-lg hover:bg-rose-600 py-4 px-3 rounded"
             }
           >
             TVshows
@@ -34,24 +37,22 @@ export default function NavBar() {
             to="/people"
             className={({ isActive }) =>
               isActive
-                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
-                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
+                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-4 px-3 rounded"
+                : "text-slate-50 text-lg hover:bg-rose-600 py-4 px-3 rounded"
             }
           >
             People
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive
-                ? "bg-rose-600 text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
-                : "text-slate-50 text-lg hover:bg-rose-600 py-5 px-3 rounded"
-            }
-          >
-            More
-          </NavLink>
+          <DropdownButton className="p-0 m-0" title="More">
+            <Dropdown.Item>
+              <NavLink to="/login">Login</NavLink>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <NavLink to="/contact">Contact</NavLink>
+            </Dropdown.Item>
+          </DropdownButton>
         </li>
       </ul>
       <div className="col-span-1 flex gap-4">
