@@ -18,8 +18,6 @@ export default function UserProvider({ children }) {
       `${baseURL}/account?api_key=${apiKey}&session_id=${session}`
     );
     fetchFavoriteMovies(data.id);
-
-    // console.log(data)
     setUser(data);
   }
   async function fetchFavoriteMovies(id = user.id) {
@@ -28,7 +26,6 @@ export default function UserProvider({ children }) {
     );
     setFavoriteMovies(favResult.data.results);
   }
-  console.log(favoriteMovies);
 
   useEffect(() => {
     if (session) {

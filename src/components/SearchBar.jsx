@@ -45,12 +45,9 @@ export default function SearchBar() {
   return (
     <section className=" flex justify-center align-baseline handle-container mt-8 gap-28 ">
       <section className=" ml-7 ">
-        <a
-          href="http://127.0.0.1:5173/"
-          className=" p-2 text-rose-600 freakFont text-2xl"
-        >
+        <NavLink to="/" className=" p-2 text-rose-600 freakFont text-2xl">
           FreakMovies
-        </a>
+        </NavLink>
       </section>
       <div className="relative flex flex-col rounded-xl text-lg grow-[2]">
         <input
